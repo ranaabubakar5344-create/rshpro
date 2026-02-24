@@ -37,7 +37,7 @@ export default function ImpactShowcase() {
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.15)]">
               <Image
-                src="/bathspa.jpg"
+                src="/bath.webp"
                 alt="Impact showcase"
                 fill
                 className="object-cover scale-105 hover:scale-110 transition duration-700"

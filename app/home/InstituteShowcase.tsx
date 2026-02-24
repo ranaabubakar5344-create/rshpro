@@ -227,7 +227,7 @@ import {
 } from "framer-motion";
 
 const slides = [
-  { id: "01", title: "Bath Spa University  – RAK", desc: "Architectural excellence with contemporary minimalism.", image: "/bathspa.jpg", bg: "#365F8C" },
+  { id: "01", title: "Bath Spa University  – RAK", desc: "Architectural excellence with contemporary minimalism.", image: "/bathspaaa.jpg", bg: "#365F8C" },
   { id: "02", title: "Future Education University College", desc: "Modern educational infrastructure with clarity and strong design language.", image: "/feuc.webp", bg: "#B0722F" },
   { id: "03", title: "Future Training Center", desc: "Professional skill development spaces engineered for growth.", image: "/ftauh.jpg", bg: "#1F4E79" },
   { id: "04", title: "University of Creative Arts", desc: "Creative spatial design and expressive architecture.", image: "/1.jpeg", bg: "#9C4A32" },
@@ -283,11 +283,14 @@ export default function ScrollColorSection() {
   const slide = slides[activeIndex];
 
   return (
+    
     <motion.section
+
       ref={ref}
       style={{ background }}
       className="relative h-[800vh]"
     >
+      
       <div
         className="sticky top-0 h-screen overflow-hidden flex items-center"
         style={{ perspective: 1000, paddingTop: "80px", paddingBottom: "24px" }}
