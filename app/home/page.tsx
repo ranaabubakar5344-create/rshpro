@@ -10,6 +10,7 @@ import ImpactStats from "./ImpactStats";
 import WhatWeOffer from "./WhatWeOffer";
 import InstituteShowcase from "./InstituteShowcase";
 import Team from './Team';
+import FooterPremium from "./Footer";
 const slides = [
   {
     id: 1,
@@ -78,7 +79,6 @@ export default function HeroSlider() {
   return (
 
     <>
-    <HomeHeader/>
       {/* ===== SCROLL INDICATOR (LEFT — FIXED) ===== */}
       {/* Exactly like GEMS: vertical "Scroll to explore" text + animated line + mouse icon */}
       <div className="fixed left-6 bottom-16 z-50 hidden lg:flex flex-col items-center gap-0">
@@ -275,6 +275,7 @@ export default function HeroSlider() {
 <WhatWeOffer/>
 <InstituteShowcase/>
 <Team/>
+
     </>
 
 );

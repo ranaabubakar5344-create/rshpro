@@ -234,7 +234,7 @@
 
 
 
-
+//2nd
 
 
 "use client";
@@ -331,11 +331,11 @@ export default function CampusCarousel() {
                 <Link href="/home">
                   <div
                     className={`relative rounded-3xl p-6
-                    bg-gradient-to-b from-[#1e3a8a] to-[#3b82f6]
+                    bg-gradient-to-b from-[#1e3a9a] to-[#3b82f9]
                     text-center
                     border border-white/10
                     h-full flex flex-col justify-between
-                    ${offset === 0 ? "ring-1 ring-amber-400/40" : ""}
+                    ${offset === 0 ? "ring-1 ring-amber-400/80" : ""}
                     `}
                   >
 
@@ -391,3 +391,164 @@ export default function CampusCarousel() {
     </section>
   );
 }
+
+
+//3rd dark blue
+
+
+
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { motion } from "framer-motion";
+
+// const centers = [
+//   { id: 1, title: "United Arab Emirate", region: "Ras Al Khaimah", logo: "/bsu-logo.png" },
+//   { id: 3, title: "United Arab Emirate", region: "Umm Al Quwain", logo: "/felo.png" },
+//   { id: 5, title: "United Arab Emirate", region: "Umm Al Quwain", logo: "/walsh.png" },
+//   { id: 4, title: "United Arab Emirate", region: "Umm Al Quwain", logo: "/UCA Black Logo.png" },
+//   { id: 2, title: "United Arab Emirate", region: "Ajman", logo: "/ftsc.png" },
+//   { id: 6, title: "United Arab Emirate", region: "Dubai", logo: "/images.png" },
+//   { id: 7, title: "United Arab Emirate", region: "Abu Dhabi", logo: "/ftsc.png" },
+//   { id: 8, title: "United Arab Emirate", region: "Sharjah", logo: "/shj.png" },
+//   { id: 9, title: "United Arab Emirate", region: "United Arab Emirates", logo: "/uecampus-logo.webp" },
+// ];
+
+// export default function CampusCarousel() {
+//   const [index, setIndex] = useState(0);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setIndex((prev) => (prev + 1) % centers.length);
+//     }, 3500);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <section className="relative h-screen overflow-hidden bg-gradient-to-b from-[#0f1f52] via-[#1b2f7a] to-[#233b9a]  flex flex-col justify-center">
+
+//       <div className="max-w-7xl mx-auto px-6 w-full">
+
+//         {/* HEADER */}
+//         <div className="text-center mb-10">
+//           <p className="text-blue-200 uppercase tracking-[4px] text-xs mb-3">
+//             15+ YEARS OF EXCELLENCE
+//           </p>
+
+//           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-serif mb-4">
+//             Our Global Campuses
+//           </h2>
+
+//           <div className="w-16 h-[3px] bg-amber-400 mx-auto mb-4 rounded-full" />
+
+//           <p className="text-blue-200 text-sm sm:text-base">
+//             World-class education across prestigious institutions in the UAE.
+//           </p>
+//         </div>
+
+//         {/* 3D CURVED CAROUSEL */}
+//         <div className="relative w-full h-[420px] flex justify-center items-center perspective-[1600px]">
+
+//           {centers.map((center, i) => {
+
+//             // ✅ Proper circular offset
+//             let offset = (i - index + centers.length) % centers.length;
+//             if (offset > centers.length / 2) {
+//               offset -= centers.length;
+//             }
+
+//             // show only 5 cards
+//             if (Math.abs(offset) > 2) return null;
+
+//             const spacing = 320;
+//             const rotate = offset * 10;
+//             const depth = -Math.abs(offset) * 120;
+//             const lift = Math.abs(offset) * 16;
+//             const scale = offset === 0 ? 1.05 : 0.94;
+
+//             return (
+//               <motion.div
+//                 key={center.id}
+//                 className="absolute w-[300px] h-[350px]"
+//                 animate={{
+//                   x: offset * spacing,
+//                   y: lift,
+//                   rotateY: rotate,
+//                   scale: scale,
+//                   z: depth,
+//                 }}
+//                 transition={{
+//                   duration: 0.6,
+//                   ease: "easeInOut",
+//                 }}
+//                 style={{
+//                   transformStyle: "preserve-3d",
+//                   zIndex: 100 - Math.abs(offset),
+//                 }}
+//               >
+//                 <Link href="/home">
+//                   <div
+//                     className={`relative rounded-3xl p-6
+//                     bg-gradient-to-b from-[#0f1f52] to-[#233b9a]
+//                     text-center
+//                     border border-white/10
+//                     h-full flex flex-col justify-between
+//                     ${offset === 0 ? "ring-1 ring-amber-400/40" : ""}
+//                     `}
+//                   >
+
+//                  <div className="flex justify-center mb-6">
+//   <div className="bg-white rounded-xl p-5 w-[130px] h-[100px]
+//     flex items-center justify-center shadow-sm">
+//     <Image
+//       src={center.logo}
+//       alt={center.title}
+//       width={130}
+//       height={90}
+//       className="object-contain"
+//       quality={100}
+//       priority
+//     />
+//   </div>
+// </div>
+//                     <div>
+//                       <h3 className="text-white text-base font-semibold mb-1">
+//                         {center.region}
+//                       </h3>
+//                       <p className="text-blue-200 text-sm">
+//                         {center.title}
+//                       </p>
+//                     </div>
+
+//                     <div className="text-amber-400 text-sm">
+//                       Explore →
+//                     </div>
+
+//                   </div>
+//                 </Link>
+//               </motion.div>
+//             );
+//           })}
+//         </div>
+
+//         {/* DOTS */}
+//         <div className="flex justify-center mt-6 gap-3">
+//           {centers.map((_, i) => (
+//             <button
+//               key={i}
+//               onClick={() => setIndex(i)}
+//               className={`h-2 rounded-full transition-all duration-300 ${
+//                 i === index ? "w-6 bg-amber-400" : "w-2 bg-white/40"
+//               }`}
+//             />
+//           ))}
+//         </div>
+
+//       </div>
+      
+//     </section>
+//   );
+// }
