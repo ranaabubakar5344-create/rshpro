@@ -245,7 +245,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const centers = [
-  { id: 1, title: "United Arab Emirate", region: "Ras Al Khaimah", logo: "/bsu-logo.png" },
+  { id: 1, title: "United Arab Emirate", region: "Ras Al Khaimah",slug: "bath-spa-university", logo: "/bsu-logo.png" },
   { id: 3, title: "United Arab Emirate", region: "Umm Al Quwain", logo: "/felo.png" },
   { id: 5, title: "United Arab Emirate", region: "Umm Al Quwain", logo: "/walsh.png" },
   { id: 4, title: "United Arab Emirate", region: "Umm Al Quwain", logo: "/UCA Black Logo.png" },
@@ -328,14 +328,15 @@ export default function CampusCarousel() {
                   zIndex: 100 - Math.abs(offset),
                 }}
               >
-                <Link href="/home">
+                <Link href={`/institutes/${center.slug}`}>
+
                   <div
                     className={`relative rounded-3xl p-6
                     bg-gradient-to-b from-[#1e3a9a] to-[#3b82f9]
                     text-center
                     border border-white/10
                     h-full flex flex-col justify-between
-                    ${offset === 0 ? "ring-1 ring-amber-400/80" : ""}
+                    ${offset === 0 ? "ring-1 ring-amber-400" : ""}
                     `}
                   >
 

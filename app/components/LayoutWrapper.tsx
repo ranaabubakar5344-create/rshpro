@@ -16,7 +16,6 @@ export default function LayoutWrapper({
     <>
       {!hideOnHome && <HomeHeader />}
       {children}
-      {!hideOnHome && <FooterPremium />}
     </>
   );
 }

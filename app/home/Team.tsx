@@ -230,25 +230,22 @@
 
 // 3RD BLUE COLOR
 
+
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
-const team = [
-  { id: 1, name: "Dr Raja Sajjad", role: "Founder & Chairman", image: "/founder.png" },
-  { id: 2, name: "Hassan Sajjad", role: "CEO", image: "/ceo.png" },
-  { id: 3, name: "Dr. Niño Miranda Decenorio", role: "Sr. Vice President", image: "/vicepr.png" },
-  { id: 4, name: "Mr. Saqib Shahzad Bhatti", role: "Academic Director", image: "/acad.png" },
-  { id: 5, name: "Dr. M N Brohi - RAK", role: "Academic Centre Manager", image: "/brh.png" },
-  { id: 6, name: "Ms. Eleanor Carino", role: "Finance Manager", image: "/fin.jpg" },
-  { id: 7, name: "Dr. Khuram Amin", role: "Strategic Projects Head", image: "/skm.png" },
-  { id: 8, name: "Mr. Abdul Basit", role: "IT Manager", image: "/it.png" },
-  { id: 9, name: "Dr. Salvacion Martir", role: "Admission Manager", image: "/ia.png" },
-];
+type TeamMember = {
+  id: number;
+  name: string;
+  role: string;
+  image: string;
+};
 
-export default function LeadershipSplitSection() {
+export default function LeadershipSplitSection({ team }: { team: TeamMember[] }) {
   const [active, setActive] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(4);
 
@@ -258,14 +255,10 @@ export default function LeadershipSplitSection() {
   const sectionInView = useInView(sectionRef, { amount: 0.4 });
   const headingInView = useInView(headingRef, { once: true });
 
-  /* Responsive thumbnails */
   useEffect(() => {
     const updateLayout = () => {
-      if (window.innerWidth < 768) {
-        setItemsPerView(3);
-      } else {
-        setItemsPerView(4);
-      }
+      if (window.innerWidth < 768) setItemsPerView(3);
+      else setItemsPerView(4);
     };
 
     updateLayout();
@@ -273,7 +266,6 @@ export default function LeadershipSplitSection() {
     return () => window.removeEventListener("resize", updateLayout);
   }, []);
 
-  /* Auto start when section visible */
   useEffect(() => {
     if (!sectionInView) return;
 
@@ -282,15 +274,19 @@ export default function LeadershipSplitSection() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [sectionInView]);
+  }, [sectionInView, team.length]);
+
+  if (!team || team.length === 0) return null;
 
   const next = () => setActive((prev) => (prev + 1) % team.length);
   const prev = () =>
     setActive((prev) => (prev === 0 ? team.length - 1 : prev - 1));
 
+  // Build the list of visible thumbnails (may contain duplicates if team.length < itemsPerView)
   const visibleThumbnails = [];
   for (let i = 0; i < itemsPerView; i++) {
-    visibleThumbnails.push(team[(active + i) % team.length]);
+    const originalIndex = (active + i) % team.length;
+    visibleThumbnails.push({ member: team[originalIndex], originalIndex });
   }
 
   return (
@@ -302,7 +298,7 @@ export default function LeadershipSplitSection() {
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[140px]" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />
 
-      {/* ================= HEADING ================= */}
+      {/* HEADING */}
       <div
         ref={headingRef}
         className="max-w-7xl mx-auto px-6 mb-24 text-center relative z-10"
@@ -344,9 +340,8 @@ export default function LeadershipSplitSection() {
         </motion.h1>
       </div>
 
-      {/* ================= SPLIT SECTION ================= */}
+      {/* SPLIT SECTION */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
-
         {/* LEFT IMAGE */}
         <div className="relative w-full h-[450px] md:h-[650px] rounded-3xl overflow-hidden shadow-[0_35px_90px_rgba(0,0,0,0.4)]">
           <AnimatePresence mode="wait">
@@ -389,20 +384,21 @@ export default function LeadershipSplitSection() {
 
           {/* THUMBNAILS */}
           <div className="flex gap-4 mb-10">
-            {visibleThumbnails.map((member, index) => {
-              const realIndex = (active + index) % team.length;
-              const isActive = realIndex === active;
+            {visibleThumbnails.map((item, index) => {
+              const { member, originalIndex } = item;
+              const isActive = originalIndex === active;
 
               return (
                 <div
-                  key={member.id}
-                  onClick={() => setActive(realIndex)}
+                  // 🔑 Unique key: member.id + map index guarantees uniqueness even if the same member appears twice
+                  key={`${member.id}-${index}`}
+                  onClick={() => setActive(originalIndex)}
                   className={`relative w-24 h-32 md:w-28 md:h-40 rounded-xl overflow-hidden cursor-pointer transition-all duration-300
-                  ${
-                    isActive
-                      ? "scale-105 ring-2 ring-white ring-offset-2 ring-offset-[#03406f]"
-                      : "opacity-70 scale-95"
-                  }`}
+                    ${
+                      isActive
+                        ? "scale-105 ring-2 ring-white ring-offset-2 ring-offset-[#03406f]"
+                        : "opacity-70 scale-95"
+                    }`}
                 >
                   <Image
                     src={member.image}
@@ -439,6 +435,8 @@ export default function LeadershipSplitSection() {
     </section>
   );
 }
+      {/* SAME DESIGN — NOTHING CHANGED BELOW */}
+
 // "use client";
 
 // import { useState, useRef, useEffect } from "react";

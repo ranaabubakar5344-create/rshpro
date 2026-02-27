@@ -7,7 +7,6 @@ export default function InstitutesLayout({
 }) {
   return (
     <>
-      <Navbar />
       {children}
     </>
   );
