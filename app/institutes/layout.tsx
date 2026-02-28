@@ -1,4 +1,3 @@
-import Navbar from "../components/Header";
 
 export default function InstitutesLayout({
   children,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 export default function ProgramsTabs({ institute }: any) {
   const categories: { [key: string]: any } = {
     Undergraduate: institute.programs?.undergraduate || [],
@@ -13,9 +13,10 @@ export default function ProgramsTabs({ institute }: any) {
 
   return (
     <section className="py-20 md:py-32 bg-[#f4f8fc]">
-      
+    
       {/* SECTION HEADING */}
       <div className="text-center mb-14 md:mb-20 px-4">
+            
         <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-[#17508f] font-medium mb-4">
           Academic Programmes
         </p>

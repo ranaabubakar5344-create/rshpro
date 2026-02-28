@@ -336,8 +336,10 @@ export default function CampusCarousel() {
                     text-center
                     border border-white/10
                     h-full flex flex-col justify-between
-                    ${offset === 0 ? "ring-1 ring-amber-400" : ""}
+                    ${offset === 0 ? "ring-1 ring-amber-400 " : ""}
                     `}
+
+                    
                   >
 
                  <div className="flex justify-center mb-6">

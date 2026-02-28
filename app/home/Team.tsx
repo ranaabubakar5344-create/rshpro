@@ -292,7 +292,7 @@ export default function LeadershipSplitSection({ team }: { team: TeamMember[] })
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#03406f] py-24 md:py-36 overflow-hidden mt-6"
+      className="relative w-full bg-gradient-to-br from-[#17508f] via-[#1f5ea3] to-[#0f3d6a] py-24 md:py-36 overflow-hidden mt-6"
     >
       {/* Background glow */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[140px]" />
@@ -419,13 +419,13 @@ export default function LeadershipSplitSection({ team }: { team: TeamMember[] })
           <div className="flex gap-4">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full border border-white/30 bg-white/10 hover:bg-white hover:text-[#03406f] transition text-white"
+              className="w-10 h-10 rounded-full border border-white/30 bg-white hover:bg-[#03406f] hover:text-white transition text-blue"
             >
               ←
             </button>
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full border border-white/30 bg-white/10 hover:bg-white hover:text-[#03406f] transition text-white"
+              className="w-10 h-10 rounded-full border border-white/30 bg-white hover:bg-[#03406f] hover:text-white transition text-blue"
             >
               →
             </button>
