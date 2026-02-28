@@ -62,9 +62,9 @@ export const institutes = [
     heroImage: "/graduation-ceremony-2022.jpg",
  aboutImage: "/bathspaaa.jpg",
     contact: {
-      phone: "+971 50 362 2440",
+      phone: "07 236 9495",
       email: "info@bathspa.ae",
-      website: "https://bathspa.ae",
+      website: "https://bathspa.ac.ae/",
     },
 
    programs: {
