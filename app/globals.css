@@ -54,3 +54,20 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+.sidebar-btn {
+  display: block;
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  color: #0f1f52;
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  background: linear-gradient(135deg, #1e3a9a, #3b82f6);
+  color: white;
+  transform: translateX(6px);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.25);
+}
