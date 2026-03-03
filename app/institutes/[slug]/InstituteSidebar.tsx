@@ -118,11 +118,19 @@ export default function InstituteSidebar({
                 : "mt-10 space-y-4"
             }`}
           >
-            <NavItem icon={<Home size={collapsed ? 26 : 18} />} label="Home" id="hero" active={active} setActive={setActive} collapsed={collapsed} />
-            <NavItem icon={<Info size={collapsed ? 26 : 18} />} label="About" id="about" active={active} setActive={setActive} collapsed={collapsed} />
-            <NavItem icon={<GraduationCap size={collapsed ? 26 : 18} />} label="Programs" id="programs" active={active} setActive={setActive} collapsed={collapsed} />
-            <NavItem icon={<Users size={collapsed ? 26 : 18} />} label="Team" id="team" active={active} setActive={setActive} collapsed={collapsed} />
-            <NavItem icon={<Phone size={collapsed ? 26 : 18} />} label="Contact" id="contact" active={active} setActive={setActive} collapsed={collapsed} />
+            <NavItem
+  icon={<Home size={collapsed ? 26 : 20} />}
+  label="Home"
+  id="hero"
+  active={active}
+  setActive={setActive}
+  collapsed={collapsed}
+  setMobileOpen={setMobileOpen}
+/>
+            <NavItem icon={<Info size={collapsed ? 26 : 18} />} label="About" id="about" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
+            <NavItem icon={<GraduationCap size={collapsed ? 26 : 18} />} label="Programs" id="programs" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
+            <NavItem icon={<Users size={collapsed ? 26 : 18} />} label="Team" id="team" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
+            <NavItem icon={<Phone size={collapsed ? 26 : 18} />} label="Contact" id="contact" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
           </nav>
         </div>
 
@@ -153,13 +161,26 @@ export default function InstituteSidebar({
   );
 }
 
-function NavItem({ icon, label, id, active, setActive, collapsed }: any) {
+function NavItem({ 
+  icon, 
+  label, 
+  id, 
+  active, 
+  setActive, 
+  collapsed,
+  setMobileOpen
+}: any)
+ {
   const isActive = active === id;
 
   return (
     <button
-      onClick={() => setActive(id)}
-      className={`
+onClick={() => {
+  setActive(id);
+  if (setMobileOpen) {
+    setMobileOpen(false);
+  }
+}}      className={`
         flex items-center
         ${collapsed ? "justify-center w-full py-3" : "gap-4 px-5 py-3"}
         rounded-xl transition-all duration-300
