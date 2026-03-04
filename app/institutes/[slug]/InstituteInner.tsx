@@ -8,7 +8,12 @@ import AboutSection from "./AboutSection";
 import ProgramsTabs from "./ProgramsTabs";
 import LeadershipSplitSection from "@/app/home/Team";
 import BoardDir from "./BoardDir";
-export default function InstituteLayout({ institute }: any) {
+
+type InstituteLayoutProps = {
+  institute: any;
+};
+
+export default function InstituteLayout({ institute }: InstituteLayoutProps) {
   const [active, setActive] = useState("hero");
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -16,24 +21,14 @@ export default function InstituteLayout({ institute }: any) {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* 📱 Floating Burger (Mobile Only) */}
-<button
-  onClick={() => setMobileOpen(true)}
-  className="
-    lg:hidden
-    fixed
-    top-5
-    left-5
-    z-50
-    p-2
-    text-white
-  "
->
-  <Menu size={30} />
-</button>
+      {/* Mobile Burger */}
+      <button
+        onClick={() => setMobileOpen(true)}
+        className="lg:hidden fixed top-5 left-5 z-50 p-2 text-white"
+      >
+        <Menu size={30} />
+      </button>
 
-
-      {/* Sidebar */}
       <InstituteSidebar
         active={active}
         setActive={setActive}
@@ -43,7 +38,6 @@ export default function InstituteLayout({ institute }: any) {
         setMobileOpen={setMobileOpen}
       />
 
-      {/* Main Content */}
       <main
         className={`
           transition-all duration-300
@@ -53,8 +47,8 @@ export default function InstituteLayout({ institute }: any) {
         {active === "hero" && <HeroSection institute={institute} />}
         {active === "about" && <AboutSection institute={institute} />}
         {active === "programs" && <ProgramsTabs institute={institute} />}
-          {active === "board" && <BoardDir />}
-        {active === "team" && institute.team && (
+        {active === "board" && <BoardDir />}
+        {active === "team" && institute?.team && (
           <LeadershipSplitSection team={institute.team} />
         )}
       </main>

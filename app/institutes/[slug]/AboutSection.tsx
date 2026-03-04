@@ -1,4 +1,7 @@
 "use client";
+type AboutSectionProps = {
+  institute: any;
+};
 
 import Image from "next/image";
 import { useState } from "react";
@@ -20,7 +23,7 @@ const slides = [
   },
 ];
 
-export default function AboutPage() {
+export default function AboutPage({ institute }: AboutSectionProps) {
   const [active, setActive] = useState(0);
 
   const nextSlide = () => {
