@@ -7,7 +7,7 @@ import HeroSection from "./HeroContent";
 import AboutSection from "./AboutSection";
 import ProgramsTabs from "./ProgramsTabs";
 import LeadershipSplitSection from "@/app/home/Team";
-
+import BoardDir from "./BoardDir";
 export default function InstituteLayout({ institute }: any) {
   const [active, setActive] = useState("hero");
   const [collapsed, setCollapsed] = useState(false);
@@ -53,6 +53,7 @@ export default function InstituteLayout({ institute }: any) {
         {active === "hero" && <HeroSection institute={institute} />}
         {active === "about" && <AboutSection institute={institute} />}
         {active === "programs" && <ProgramsTabs institute={institute} />}
+          {active === "board" && <BoardDir />}
         {active === "team" && institute.team && (
           <LeadershipSplitSection team={institute.team} />
         )}

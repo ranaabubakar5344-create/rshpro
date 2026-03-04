@@ -7,6 +7,7 @@ import {
   GraduationCap,
   Users,
   Phone,
+Crown,
   Menu,
   Facebook,
   Instagram,
@@ -128,8 +129,21 @@ export default function InstituteSidebar({
   setMobileOpen={setMobileOpen}
 />
             <NavItem icon={<Info size={collapsed ? 26 : 18} />} label="About" id="about" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
-            <NavItem icon={<GraduationCap size={collapsed ? 26 : 18} />} label="Programs" id="programs" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
+<NavItem
+  icon={<Crown size={collapsed ? 26 : 18} />}
+  label="Board of Directors"
+  id="board"
+  active={active}
+  setActive={setActive}
+  collapsed={collapsed}
+  setMobileOpen={setMobileOpen}
+/>
+            <NavItem icon={<GraduationCap size={collapsed ? 26 : 18} />} label="Programmes" id="programs" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
+
+
+
             <NavItem icon={<Users size={collapsed ? 26 : 18} />} label="Team" id="team" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
+
             <NavItem icon={<Phone size={collapsed ? 26 : 18} />} label="Contact" id="contact" active={active} setActive={setActive} collapsed={collapsed} setMobileOpen={setMobileOpen} />
           </nav>
         </div>
