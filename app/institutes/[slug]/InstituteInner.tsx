@@ -32,25 +32,27 @@ export default function InstituteLayout({ institute }: InstituteLayoutProps) {
 
       {/* ✅ MOBILE HAMBURGER BUTTON */}
       <button
-        onClick={() => setMobileOpen(true)}
-        className="
-          lg:hidden
-          fixed
-          top-5
-          left-5
-          z-[60]
-          w-12
-          h-12
-          flex
-          items-center
-          justify-center
-          rounded-full
-          text-white
-          shadow-lg
-        "
-      >
-        <Menu size={22} />
-      </button>
+  onClick={() => setMobileOpen(true)}
+ className="
+  lg:hidden
+  fixed
+  top-5
+  left-5
+  z-[9999]
+  w-12
+  h-12
+  flex
+  items-center
+  justify-center
+  rounded-full
+  bg-[#1E3A8A]
+  text-white
+  shadow-2xl
+  pointer-events-auto
+"
+>
+  <Menu size={22} />
+</button>
 
       <InstituteSidebar
         active={active}
