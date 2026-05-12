@@ -73,8 +73,8 @@ export default function InstituteLayout({ institute }: InstituteLayoutProps) {
         {active === "about" && <AboutSection institute={institute} />}
         {active === "programs" && <ProgramsTabs institute={institute} />}
         {active === "board" && <BoardDir />}
-        {active === "contact" && <ContactPage />}
-        {active === "team" && institute?.team && (
+{active === "contact" && <ContactPage institute={institute} />}      
+  {active === "team" && institute?.team && (
           <LeadershipSplitSection team={institute.team} />
         )}
       </main>

@@ -5,8 +5,9 @@ type AboutSectionProps = {
 
 import Image from "next/image";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Target, Eye, ShieldCheck } from "lucide-react";
+import { ChevronLeft, ChevronRight, Target, Eye, ShieldCheck, } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const slides = [
   {
@@ -37,9 +38,11 @@ export default function AboutPage({ institute }: AboutSectionProps) {
   return (
     <main className="w-full bg-white">
 
+
+
       {/* ================= SPLIT HERO ================= */}
       <section className="relative w-full h-[420px] md:h-[480px] flex overflow-hidden">
-
+ 
         {/* LEFT IMAGE */}
         <div className="relative w-full md:w-1/2">
           <AnimatePresence mode="wait">
@@ -51,6 +54,10 @@ export default function AboutPage({ institute }: AboutSectionProps) {
               transition={{ duration: 0.6 }}
               className="absolute inset-0"
             >
+
+
+
+
               <Image
                 src={slides[active].image}
                 alt="Slide"
@@ -62,9 +69,7 @@ export default function AboutPage({ institute }: AboutSectionProps) {
             </motion.div>
           </AnimatePresence>
 
-          <div className="absolute top-6 left-6 text-white text-sm hidden md:block">
-            Home &nbsp;›&nbsp; About Us
-          </div>
+         
 
           <button
             onClick={prevSlide}
@@ -73,7 +78,13 @@ export default function AboutPage({ institute }: AboutSectionProps) {
             <ChevronLeft size={20} />
           </button>
         </div>
-
+ <div className="absolute top-6 left-6 text-white text-sm">
+      <Link href="/" className="hover:text-amber-400 transition">
+        Home
+      </Link>
+      <span className="mx-2">/</span>
+      <span className="text-white/70">About RSH</span>
+    </div>
         {/* RIGHT PANEL */}
         <div className="hidden md:flex w-1/2 bg-[#1E3A8A] text-white items-center px-16 relative">
           <AnimatePresence mode="wait">
@@ -463,6 +474,7 @@ export default function AboutPage({ institute }: AboutSectionProps) {
       >
         {/* HEADER */}
         <div className="flex items-center gap-2 mb-4">
+          {/* <span className="text-xl">{item.flag}</span> */}
           <h3 className="text-base font-semibold text-[#1E3A8A]">
             {item.country}
           </h3>

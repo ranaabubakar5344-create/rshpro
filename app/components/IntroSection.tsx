@@ -430,34 +430,34 @@ const centers = [
     title: "United Arab Emirate",
     region: "Umm Al Quwain",
     slug: "university-of-creative-arts",
-    logo: "/UCA Black Logo.png",
+    logo: "/image.png",
   },
   {
     id: 2,
     title: "United Arab Emirate",
     region: "Ajman",
-    slug: "future-training-services-center",
-    logo: "/ftsc.png",
+    slug: "future-training-services-center-ajman",
+    logo: "/ftc.jpeg",
   },
   {
     id: 6,
     title: "United Arab Emirate",
     region: "Dubai",
-    slug: "dubai-campus",
-    logo: "/images.png",
+    slug: "metaverseage-training-institute-dubai",
+    logo: "/mati.png",
   },
   {
     id: 7,
     title: "United Arab Emirate",
     region: "Abu Dhabi",
     slug: "abu-dhabi-campus",
-    logo: "/ftsc.png",
+    logo: "/auh.webp",
   },
   {
     id: 8,
     title: "United Arab Emirate",
     region: "Sharjah",
-    slug: "sharjah-campus",
+    slug: "futureeducation-center-sharjah",
     logo: "/shj.png",
   },
   {
@@ -625,17 +625,17 @@ className="mt-6 w-full max-w-4xl"
   About RSH
 </Link>
 
-<button className="group rounded-lg border border-[#3A5FCE]/20 bg-[#3A5FCE] px-3 py-3 text-center text-sm sm:text-base font-semibold text-white shadow-md shadow-[#3A5FCE]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4B6FE0] hover:shadow-lg hover:shadow-[#3A5FCE]/40 focus:outline-none focus:ring-2 focus:ring-[#E6B422] focus:ring-offset-2">
+<Link href="/becomepartner" className="group rounded-lg border border-[#3A5FCE]/20 bg-[#3A5FCE] px-3 py-3 text-center text-sm sm:text-base font-semibold text-white shadow-md shadow-[#3A5FCE]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4B6FE0] hover:shadow-lg hover:shadow-[#3A5FCE]/40 focus:outline-none focus:ring-2 focus:ring-[#E6B422] focus:ring-offset-2">
 Become a Partner
-</button>
+</Link>
 
-<button className="group rounded-lg border border-[#3A5FCE]/20 bg-[#3A5FCE] px-3 py-3 text-center text-sm sm:text-base font-semibold text-white shadow-md shadow-[#3A5FCE]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4B6FE0] hover:shadow-lg hover:shadow-[#3A5FCE]/40 focus:outline-none focus:ring-2 focus:ring-[#E6B422] focus:ring-offset-2">
+<Link href="/ourpartners" className="group rounded-lg border border-[#3A5FCE]/20 bg-[#3A5FCE] px-3 py-3 text-center text-sm sm:text-base font-semibold text-white shadow-md shadow-[#3A5FCE]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4B6FE0] hover:shadow-lg hover:shadow-[#3A5FCE]/40 focus:outline-none focus:ring-2 focus:ring-[#E6B422] focus:ring-offset-2">
 Our Partners
-</button>
+</Link>
 
-<button className="group rounded-lg border border-[#3A5FCE]/20 bg-[#3A5FCE] px-3 py-3 text-center text-sm sm:text-base font-semibold text-white shadow-md shadow-[#3A5FCE]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4B6FE0] hover:shadow-lg hover:shadow-[#3A5FCE]/40 focus:outline-none focus:ring-2 focus:ring-[#E6B422] focus:ring-offset-2">
+<Link href="/team" className="group rounded-lg border border-[#3A5FCE]/20 bg-[#3A5FCE] px-3 py-3 text-center text-sm sm:text-base font-semibold text-white shadow-md shadow-[#3A5FCE]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4B6FE0] hover:shadow-lg hover:shadow-[#3A5FCE]/40 focus:outline-none focus:ring-2 focus:ring-[#E6B422] focus:ring-offset-2">
 Team
-</button>
+</Link>
 
 </div>
 
